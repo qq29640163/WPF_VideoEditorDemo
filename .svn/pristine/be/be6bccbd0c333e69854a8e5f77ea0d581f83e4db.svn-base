@@ -1,0 +1,54 @@
+﻿<UserControl x:Class="ZPC.Phone.View.DialogView.WatermarkDialogView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ZPC.Phone.View.DialogView"
+             xmlns:event="http://schemas.microsoft.com/expression/2010/interactivity"
+             mc:Ignorable="d" 
+             xmlns:prism="http://prismlibrary.com/"
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             d:DesignHeight="450" d:DesignWidth="450">
+    <StackPanel Margin="20,0,20,0">
+        <TextBlock FontWeight="Bold" Text="图片："/>
+        <Border x:Name="border" BorderBrush="Gray" 
+                BorderThickness="2">
+            <Grid>
+                <Image x:Name="image" Width="{Binding ElementName=Width,Path=Text}" 
+                       Height="{Binding ElementName=Height,Path=Text}" 
+                       MinHeight="100"
+                       MinWidth="100"
+                       Source="{Binding WatermarkSource}" 
+                       MouseEnter="image_MouseEnter"
+                       MouseLeave="image_MouseLeave"
+                       Stretch="Uniform" >
+                    <event:Interaction.Triggers>
+                        <event:EventTrigger EventName="MouseLeftButtonDown">
+                            <prism:InvokeCommandAction Command="{Binding AddWatermarkCommand}"/>
+                        </event:EventTrigger>
+                    </event:Interaction.Triggers>
+                </Image>
+            </Grid>
+        </Border>
+        <TextBlock Text="图片大小：" FontWeight="Bold"/>
+        <WrapPanel>
+            <TextBlock Text="Width:" FontWeight="Bold"/>
+            <TextBox x:Name="Width" Width="50" Text="{Binding Width}"/>
+            <TextBlock Text="Height:" FontWeight="Bold"/>
+            <TextBox x:Name="Height" Width="50" Text="{Binding Height}"/>
+        </WrapPanel>
+        <TextBlock Text="图片位置：" FontWeight="Bold"/>
+        <WrapPanel>
+            <TextBlock Text="X:" FontWeight="Bold"/>
+            <TextBox Width="50" Text="{Binding X}"/>
+            <TextBlock Text="Y:" FontWeight="Bold"/>
+            <TextBox Width="50" Text="{Binding Y}"/>
+        </WrapPanel>
+
+        <DockPanel Margin="0,5,0,5">
+            <Button  Content="取消" Width="50" DockPanel.Dock="Right" Command="{Binding CancelCommand}" Margin="5,0,0,0"/>
+            <Button  Content="确认" Width="50" DockPanel.Dock="Right" Command="{Binding SubmitCommand}"/>
+            <Border Width="20"/>
+        </DockPanel>
+    </StackPanel>
+</UserControl>

@@ -1,0 +1,36 @@
+﻿<Window x:Class="ZPC.Phone.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:prism="http://prismlibrary.com/"
+        prism:ViewModelLocator.AutoWireViewModel="True"
+        xmlns:local="clr-namespace:ZPC.Phone"
+        WindowStyle="None"
+        x:Name="WindowMain"
+        mc:Ignorable="d"
+        Background="	#F5F5F5"
+        Title="MainWindow" Height="780" Width="1280">
+    <WindowChrome.WindowChrome>
+        <WindowChrome CaptionHeight="30"/>
+    </WindowChrome.WindowChrome>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Background="#00bFF1">
+            <WrapPanel HorizontalAlignment="Right">
+                <Button Style="{DynamicResource ButtonMinStyle}" Command="{Binding WindowMinSizeCommand}" CommandParameter="{Binding ElementName=WindowMain}"/>
+                <Button  Style="{DynamicResource ButtonCloseStyle}" Command="{Binding WindowCloseCommand}" CommandParameter="{Binding ElementName=WindowMain}"/>
+            </WrapPanel>
+        </Grid>
+        <DockPanel  Grid.Row="1">
+            <ListBox DockPanel.Dock="Left" Width="200" Style="{DynamicResource MenuListStyle}" 
+                    ItemsSource="{Binding MenuList}"
+                    SelectedValue="{Binding SelectValue}"
+                    BorderBrush="Transparent"/>
+            <ContentControl prism:RegionManager.RegionName="Main_Shell"/>
+        </DockPanel>
+    </Grid>
+</Window>

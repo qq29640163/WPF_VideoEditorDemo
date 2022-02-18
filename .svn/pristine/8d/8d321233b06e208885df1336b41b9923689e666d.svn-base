@@ -1,0 +1,14 @@
+﻿<unity:PrismApplication x:Class="ZPC.Phone.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:ZPC.Phone"
+             xmlns:unity="http://prismlibrary.com/">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/ZPC.Phone;component/Resource/CommonStyle.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/ZPC.Phone;component/Resource/ImageResource.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</unity:PrismApplication>

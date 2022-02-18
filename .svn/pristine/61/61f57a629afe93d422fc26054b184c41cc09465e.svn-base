@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="ZPC.Phone.View.DialogView.GifSetView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ZPC.Phone.View.DialogView"
+             mc:Ignorable="d" 
+             xmlns:prism="http://prismlibrary.com/"
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <StackPanel Margin="10">
+        <TextBlock Text="截取时间(格式 00:00:00)："/>
+        <WrapPanel>
+            <TextBox Width="75" Text="{Binding Start}"/>
+            <TextBlock Text="-" FontWeight="Bold"/>
+            <TextBox Width="75" Text="{Binding End}"/>
+        </WrapPanel>
+        <TextBlock Text="帧率"/>
+        <ComboBox ItemsSource="{Binding FrameRates}" SelectedValue="{Binding FrameRate}"/>
+        <TextBlock Text="分辨率"/>
+        <WrapPanel>
+            <TextBox Width="50" Text="{Binding Width}"/>
+            <TextBlock Text="X" FontWeight="Bold"/>
+            <TextBox Width="50" Text="{Binding Height}"/>
+        </WrapPanel>
+        <DockPanel>
+            <Button DockPanel.Dock="Right" Content="取消" Command="{Binding CancelCommand}" Margin="5,0,0,0"/>
+            <Button DockPanel.Dock="Right" Content="确定" Command="{Binding SubmitCommand}"/>
+            <Border/>
+        </DockPanel>
+    </StackPanel>
+</UserControl>

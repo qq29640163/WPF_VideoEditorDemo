@@ -1,0 +1,14 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ImageSource x:Key="IMG_MediaPlay">pack://application:,,,/ZPC.Phone;component/Resource/Image/Media/播放.png</ImageSource>
+    <ImageSource x:Key="IMG_MediaStop">pack://application:,,,/ZPC.Phone;component/Resource/Image/Media/停止.png</ImageSource>
+    <ImageSource x:Key="IMG_MediaPause">pack://application:,,,/ZPC.Phone;component/Resource/Image/Media/暂停.png</ImageSource>
+    <DrawingImage x:Key="AdditionDrawingImage">
+        <DrawingImage.Drawing>
+            <DrawingGroup ClipGeometry="M0,0 V1024 H1024 V0 H0 Z">
+                <GeometryDrawing Brush="#FF1296DB" Geometry="F1 M1024,1024z M0,0z M512,832C335.552,832 192,688.448 192,512 192,335.552 335.552,192 512,192 688.448,192 832,335.552 832,512 832,688.448 688.448,832 512,832 M512,128C300.256,128 128,300.256 128,512 128,723.744 300.256,896 512,896 723.744,896 896,723.744 896,512 896,300.256 723.744,128 512,128" />
+                <GeometryDrawing Brush="#FF1296DB" Geometry="F1 M1024,1024z M0,0z M683.936,470.944L544,470.944 544,330.976A32,32,0,1,0,480,330.976L480,470.944 340.064,470.944A32,32,0,0,0,340.064,534.944L480,534.944 480,674.912A32,32,0,0,0,544,674.912L544,534.944 683.968,534.944A32,32,0,0,0,683.968,470.944" />
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+</ResourceDictionary>

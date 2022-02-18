@@ -1,0 +1,173 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!--左边导航菜单样式-->
+    <Style x:Key="MenuListStyle" TargetType="ListBox">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ListBox">
+                    <Border Background="{TemplateBinding Background}" 
+                            BorderBrush="#87CEFA"
+                            BorderThickness="1"
+                            CornerRadius="2">
+                        <ScrollViewer Margin="0" Focusable="false">
+                            <StackPanel Margin="2" IsItemsHost="True"  />
+                        </ScrollViewer>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ItemContainerStyle">
+            <Setter.Value>
+                <Style TargetType="ListBoxItem">
+                    <Setter Property="SnapsToDevicePixels" Value="True"/>
+                    <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+                    <Setter Property="Padding" Value="0"/>
+                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                    <Setter Property="VerticalContentAlignment" Value="Top"/>
+                    <Setter Property="FontSize" Value="20"/>
+                    <Setter Property="BorderThickness" Value="0"/>
+                    <Setter Property="Content" Value="{Binding Name}"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="ListBoxItem">
+                                <Border Name="bd" Background="Transparent" 
+                                        BorderBrush="#87CEFA"
+                                        BorderThickness="1"
+                                        Margin="0,1,0,0"
+                                        CornerRadius="2">
+                                    <ContentPresenter HorizontalAlignment="Center"/>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" TargetName="bd" Value="#3900BFFF"/>
+                                        <Setter Property="BorderBrush" TargetName="bd" Value="#00BFFF"/>
+                                    </Trigger>
+                                    <Trigger Property="IsMouseOver" Value="False">
+                                        <Setter Property="Background" TargetName="bd" Value="Transparent"/>
+                                        <Setter Property="BorderBrush" TargetName="bd" Value="#87CEFA"/>
+                                    </Trigger>
+                                    <Trigger Property="IsSelected" Value="True">
+                                        <Setter Property="Background" TargetName="bd" Value="#00BFFF"/>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!--窗口关闭按钮样式-->
+    <Style x:Key="ButtonCloseStyle" TargetType="Button">
+        <Setter Property="Width" Value="32"/>
+        <Setter Property="Height" Value="32"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid x:Name="Close" Width="{TemplateBinding Width}" Background="{TemplateBinding Background}" Height="{TemplateBinding Height}">
+                        <Path Stroke="AliceBlue" Data="M0,0 11,11M0,11,11,0" StrokeThickness="1"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" TargetName="Close" Value="red"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--窗口最小化按钮样式-->
+    <Style x:Key="ButtonMinStyle" TargetType="Button">
+        <Setter Property="Width" Value="32"/>
+        <Setter Property="Height" Value="32"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid x:Name="Close" Width="{TemplateBinding Width}" Background="{TemplateBinding Background}" Height="{TemplateBinding Height}">
+                        <Path Stroke="AliceBlue" Data="M0,1 11,1" StrokeThickness="1"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" TargetName="Close" Value="#22FFFFFF"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--播放按钮样式-->
+    <Style x:Key="ButtonMediaPlay" TargetType="Button">
+        <Setter Property="Width" Value="50"/>
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+                        <Image Source="{DynamicResource IMG_MediaPlay}" Stretch="None"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--暂停按钮样式-->
+    <Style x:Key="ButtonMediaPause" TargetType="Button">
+        <Setter Property="Width" Value="50"/>
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="Tag" Value="true"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+                        <Image Source="{DynamicResource IMG_MediaPause}" Stretch="None"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--停止按钮样式-->
+    <Style x:Key="ButtonMediaStop" TargetType="Button">
+        <Setter Property="Width" Value="50"/>
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+                        <Image Source="{DynamicResource IMG_MediaStop}" Stretch="None"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--打开路径按钮-->
+    <Style x:Key="ButtonOpenSrc" TargetType="Button">
+        <Setter Property="Width" Value="250"/>
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.7*"/>
+                            <ColumnDefinition Width="0.3*"/>
+                        </Grid.ColumnDefinitions>
+                        <Border BorderBrush="Gray" BorderThickness="1" Grid.Column="0">
+                            <TextBlock Text="{TemplateBinding Content}" VerticalAlignment="Center"/>
+                        </Border>
+                        <Button Grid.Column="1" Content="{TemplateBinding Tag}"
+                                Command="{Binding RelativeSource={RelativeSource Mode=TemplatedParent},Path=Command}"
+                                CommandParameter="{Binding RelativeSource={RelativeSource Mode=TemplatedParent},Path=CommandParameter}"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

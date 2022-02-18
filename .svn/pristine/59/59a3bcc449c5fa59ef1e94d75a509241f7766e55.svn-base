@@ -1,0 +1,333 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{55D35B8D-83D2-4E5E-A996-41E4D6EE5893}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ZPC.Phone</RootNamespace>
+    <AssemblyName>ZPC.Phone</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+    <LangVersion>8.0</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>video-player.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ReachFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="ColorSelector\ColorPicker.xaml.cs">
+      <DependentUpon>ColorPicker.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ColorSelector\HsbaColor.cs" />
+    <Compile Include="ColorSelector\ResObj.cs" />
+    <Compile Include="ColorSelector\RgbaColor.cs" />
+    <Compile Include="ColorSelector\StreamObj.cs" />
+    <Compile Include="ColorSelector\Utility.cs" />
+    <Compile Include="Converters\ObjectToDoubleConverter.cs" />
+    <Compile Include="Converters\ObjectToStretchConverter.cs" />
+    <Compile Include="Draw\DrawCursors.cs" />
+    <Compile Include="Draw\DrawGeometryBase.cs" />
+    <Compile Include="Draw\DrawingCanvas.cs" />
+    <Compile Include="Draw\DrawingCanvasViewer.cs" />
+    <Compile Include="Draw\DrawToolType.cs" />
+    <Compile Include="Draw\IDrawTool.cs" />
+    <Compile Include="Draw\Serialize\DrawGeometrySerializer.cs" />
+    <Compile Include="Draw\Serialize\DrawGeometrySerializerBase.cs" />
+    <Compile Include="Draw\Serialize\DrawPenSerializer.cs" />
+    <Compile Include="Draw\Serialize\DrawTextSerializer.cs" />
+    <Compile Include="Draw\Tool\ImageHelper.cs" />
+    <Compile Include="Draw\Tool\PenDrawTool.cs" />
+    <Compile Include="Draw\Tool\TextDrawTool.cs" />
+    <Compile Include="Draw\Utils\DpiHelper.cs" />
+    <Compile Include="Draw\Utils\TreeHelper.cs" />
+    <Compile Include="FFmpegs\AVFilterExaple.cs" />
+    <Compile Include="FFmpegs\Basic\AudioTrack.cs" />
+    <Compile Include="FFmpegs\Basic\Bitrate.cs" />
+    <Compile Include="FFmpegs\Basic\ClassExtensions.cs" />
+    <Compile Include="FFmpegs\Basic\ColorInfo.cs" />
+    <Compile Include="FFmpegs\Basic\ConversionOptions.cs" />
+    <Compile Include="FFmpegs\Basic\TimeIntervalCollection.cs" />
+    <Compile Include="FFmpegs\Encoders\AudioEncoders.cs" />
+    <Compile Include="FFmpegs\Encoders\AV1Encoder.cs" />
+    <Compile Include="FFmpegs\Encoders\CopyEncoder.cs" />
+    <Compile Include="FFmpegs\Encoders\H264Encoder.cs" />
+    <Compile Include="FFmpegs\Encoders\H265Encoder.cs" />
+    <Compile Include="FFmpegs\Encoders\Nvenc.cs" />
+    <Compile Include="FFmpegs\Encoders\QuickSync.cs" />
+    <Compile Include="FFmpegs\Encoders\VideoEncoder.cs" />
+    <Compile Include="FFmpegs\FFmpegEngine.cs" />
+    <Compile Include="FFmpegs\FFmpegBinariesHelper.cs" />
+    <Compile Include="FFmpegs\FFmpegEnum.cs" />
+    <Compile Include="FFmpegs\FFmpegHelper.cs" />
+    <Compile Include="FFmpegs\FFprobeEnum.cs" />
+    <Compile Include="FFmpegs\FFprobeHelper.cs" />
+    <Compile Include="FFmpegs\Filters\CropFilter.cs" />
+    <Compile Include="FFmpegs\Filters\CustomFilter.cs" />
+    <Compile Include="FFmpegs\Filters\DrawtextFilter.cs" />
+    <Compile Include="FFmpegs\Filters\EqFilter.cs" />
+    <Compile Include="FFmpegs\Filters\FadeFilter.cs" />
+    <Compile Include="FFmpegs\Filters\Filtergraph.cs" />
+    <Compile Include="FFmpegs\Filters\FpsFilter.cs" />
+    <Compile Include="FFmpegs\Filters\GifFilter.cs" />
+    <Compile Include="FFmpegs\Filters\MovieFilter.cs" />
+    <Compile Include="FFmpegs\Filters\OverlayFilter.cs" />
+    <Compile Include="FFmpegs\Filters\RotationFilter.cs" />
+    <Compile Include="FFmpegs\Filters\ScaleFilter.cs" />
+    <Compile Include="FFmpegs\Filters\VolumeFilter.cs" />
+    <Compile Include="FFmpegs\H264VideoStreamEncoder.cs" />
+    <Compile Include="FFmpegs\Basic\MediaInfo.cs" />
+    <Compile Include="FFmpegs\Basic\ProgressData.cs" />
+    <Compile Include="FFmpegs\Basic\Resolution.cs" />
+    <Compile Include="FFmpegs\VideoFrameConverter.cs" />
+    <Compile Include="FFmpegs\VideoStreamDecoder.cs" />
+    <Compile Include="Model\Watermark.cs" />
+    <Compile Include="Tool\ProcessTool.cs" />
+    <Compile Include="ViewModel\CameraEditViewModel.cs" />
+    <Compile Include="ViewModel\DeviceInfoViewModel.cs" />
+    <Compile Include="ViewModel\DialogViewModel\BlurDialogViewModel.cs" />
+    <Compile Include="ViewModel\DialogViewModel\GifSetViewModel.cs" />
+    <Compile Include="ViewModel\DialogViewModel\WatermarkDialogViewModel.cs" />
+    <Compile Include="ViewModel\DialogViewModel\WatermarkTextDialogViewModel.cs" />
+    <Compile Include="ViewModel\DrawingBoardViewModel.cs" />
+    <Compile Include="ViewModel\FileManageViewModel.cs" />
+    <Compile Include="ViewModel\MiniblinkViewModel.cs" />
+    <Compile Include="ViewModel\OtherViewModel.cs" />
+    <Compile Include="ViewModel\VideoEditViewModel.cs" />
+    <Compile Include="View\CameraEditView.xaml.cs">
+      <DependentUpon>CameraEditView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\DeviceInfoView.xaml.cs">
+      <DependentUpon>DeviceInfoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\DialogView\BlurDialogView.xaml.cs">
+      <DependentUpon>BlurDialogView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\DialogView\GifSetView.xaml.cs">
+      <DependentUpon>GifSetView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\DialogView\WatermarkDialogView.xaml.cs">
+      <DependentUpon>WatermarkDialogView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\DialogView\WatermarkTextDialogView.xaml.cs">
+      <DependentUpon>WatermarkTextDialogView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\DrawingBoardView.xaml.cs">
+      <DependentUpon>DrawingBoardView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\FileManageView.xaml.cs">
+      <DependentUpon>FileManageView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MiniblinkView.xaml.cs">
+      <DependentUpon>MiniblinkView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\OtherView.xaml.cs">
+      <DependentUpon>OtherView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\VideoEditView.xaml.cs">
+      <DependentUpon>VideoEditView.xaml</DependentUpon>
+    </Compile>
+    <Page Include="ColorSelector\ColorPicker.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Command\CommandBase.cs" />
+    <Compile Include="Enum\DialogName.cs" />
+    <Compile Include="Enum\NavigateName.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Resource\CommonStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resource\ImageResource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\CameraEditView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\DeviceInfoView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\DialogView\BlurDialogView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\DialogView\GifSetView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\DialogView\WatermarkDialogView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\DialogView\WatermarkTextDialogView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\DrawingBoardView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\FileManageView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MiniblinkView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\OtherView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\VideoEditView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MainWindowViewModel.cs" />
+    <Compile Include="Model\MenuItem.cs" />
+    <Compile Include="Model\ModuleContainer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Android\Connect\" />
+    <Folder Include="Android\Data\" />
+    <Folder Include="Android\ObjectModel\" />
+    <Folder Include="Resource\Control.UI\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="CommonServiceLocator">
+      <Version>2.0.4</Version>
+    </PackageReference>
+    <PackageReference Include="FFmpeg.AutoGen">
+      <Version>4.4.1.1</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf">
+      <Version>1.1.31</Version>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>13.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="Prism.Core">
+      <Version>7.2.0.1422</Version>
+    </PackageReference>
+    <PackageReference Include="Prism.Unity">
+      <Version>7.2.0.1422</Version>
+    </PackageReference>
+    <PackageReference Include="Prism.Wpf">
+      <Version>7.2.0.1422</Version>
+    </PackageReference>
+    <PackageReference Include="System.Runtime.InteropServices.RuntimeInformation">
+      <Version>4.3.0</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\iMobie.Miniblink\iMobie.Miniblink.csproj">
+      <Project>{b20b797d-67fa-4a46-945e-59390d6c0a36}</Project>
+      <Name>iMobie.Miniblink</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\Image\Media\播放.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\Image\Media\停止.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\Image\Media\暂停.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="video-player.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
