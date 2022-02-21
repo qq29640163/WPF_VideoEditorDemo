@@ -13,6 +13,10 @@ using System.Threading.Tasks;
 namespace ZPC.Phone.FFmpegs
 {
     /*
+     * -c:v nvenc_264 英伟达硬件加速编码
+     * -c:v h264_qsv intel cpu硬件加速
+     * -c:v h264_amf AMD显卡硬件加速
+     * Driver does not support 驱动不支持
      * 时间线编辑语法 ：
      * 1.smartblur=enable='between(t,10,3*60)'表示smartblur模糊滤镜从第10秒持续到3分钟
      * 2.curves=enable(gte(t,3))表示在3秒后启用滤镜
