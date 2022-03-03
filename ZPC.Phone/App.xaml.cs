@@ -7,6 +7,8 @@ using System.Configuration;
 using System.Data;
 using System.IO;
 using System.Linq;
+using System.Net;
+using System.Net.Sockets;
 using System.Threading.Tasks;
 using System.Windows;
 using ZPC.Phone.Model;
@@ -26,6 +28,21 @@ namespace ZPC.Phone
         {
             base.OnStartup(e);
         }
+
+        //Socket向本地服务器发起请求
+        private void sendSocket()
+        {
+            Socket client = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+            var ip = IPAddress.Parse("192.168.123.210");
+            client.Connect(new IPEndPoint(ip, 9999));
+            byte[] buffer = new byte[1024];
+            if (client.Receive(buffer) > 0)
+            {
+                string a = System.Text.Encoding.UTF8.GetString(buffer);
+                Console.WriteLine();
+            }
+        }
+
 
         #region 加载登录界面,业务模块
         /// <summary>

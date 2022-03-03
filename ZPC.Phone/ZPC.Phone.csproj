@@ -47,6 +47,7 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -132,6 +133,11 @@
     <Compile Include="FFmpegs\Basic\Resolution.cs" />
     <Compile Include="FFmpegs\VideoFrameConverter.cs" />
     <Compile Include="FFmpegs\VideoStreamDecoder.cs" />
+    <Compile Include="Http\HeaderEntity.cs" />
+    <Compile Include="Http\HttpReqNetClient.cs" />
+    <Compile Include="Http\HttpReqNetClientExtend.cs" />
+    <Compile Include="Http\HttpResponse.cs" />
+    <Compile Include="Http\HttpUtilityTools.cs" />
     <Compile Include="Model\Watermark.cs" />
     <Compile Include="Tool\ProcessTool.cs" />
     <Compile Include="ViewModel\CameraEditViewModel.cs" />
