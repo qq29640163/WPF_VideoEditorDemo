@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 
-namespace ZPC.Phone.Http
+namespace ZPC.Phone
 {
     public class HttpReqNetClientExtend
     {

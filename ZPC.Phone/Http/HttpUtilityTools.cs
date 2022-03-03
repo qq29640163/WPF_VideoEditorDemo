@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ZPC.Phone.Http
+namespace ZPC.Phone
 {
     public static class HttpUtilityTools
     {
